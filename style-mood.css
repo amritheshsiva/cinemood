@@ -1,0 +1,118 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh; 
+    overflow-x: hidden; 
+}
+
+.navbar {
+    background-color: hsl(0, 0%, 25%);
+    overflow: hidden;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: left;
+}
+
+.navbar li {
+    float: left;
+    margin: 0;
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: hsl(0, 0%, 10%);
+}
+
+.navbar .active {
+    background-color: hsl(0, 0%, 10%);
+}
+
+.mood-page {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.mood-category {
+    max-width: 800px;
+    text-align: center;
+    animation: luminating 3s infinite alternate; 
+}
+
+.mood-category h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: white;
+    display: inline-block; 
+}
+
+.mood-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.mood-item {
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+    width: calc(25% - 40px); 
+    max-width: 200px; 
+}
+
+.mood-item:hover {
+    transform: translateY(-5px);
+}
+
+.mood-link {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.emoji {
+    font-size: 3em;
+}
+
+.mood-name {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+
+
+/* Keyframes for luminating animation */
+@keyframes luminating {
+    0%, 100% {
+        text-shadow: 0 0 10px red, 0 0 20px red, 0 0 40px red, 0 0 60px blue, 0 0 80px blue, 0 0 100px blue, 0 0 120px blue;
+    }
+    50% {
+        text-shadow: 0 0 20px blue, 0 0 40px blue, 0 0 60px blue, 0 0 80px red, 0 0 100px red, 0 0 120px red, 0 0 140px red;
+    }
+}

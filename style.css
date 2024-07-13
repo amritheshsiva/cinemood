@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+}
+
+
+.navbar {
+    background-color: hsl(0, 0%, 25%);
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: left; 
+}
+
+.navbar li {
+    float: right;
+    margin: 0;
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease; 
+}
+
+.navbar a:hover {
+    background-color: hsl(0, 0%, 10%);
+    transform: scale(1.2);
+}
+
+.cine {
+    color: red;
+}
+
+.mood {
+    color: blue;
+}
+
+.profile-icon {
+    width: 30px; 
+    height: 30px; 
+    border-radius: 50%; 
+}
+
+
+.navbar-item {
+    display: inline-block; 
+    margin-left: 10px; }
+
+.navbar .right {
+    margin-left: auto; 
+}
+
+.navbar .right a {
+    padding: 15px; 
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .navbar ul {
+        flex-direction: column; 
+    }
+
+    .navbar li {
+        float: none;
+        width: 100%;
+    }
+}
+
+
+.navbar a {
+    position: relative;
+}
+
+.navbar a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover::before {
+    background-color: white;
+}
