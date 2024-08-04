@@ -1,18 +1,94 @@
 body {
+    margin: 0; /* Set margin to 0 for the body to ensure the navbar is aligned correctly */
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #000;
+    background-color: black;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
 }
 
-h1 {
-    color: #fff;
+.navbar {
+    background-color: hsl(0, 0%, 25%);
+    overflow: hidden;
+    position: fixed;
+    top: 0; /* Ensure the navbar is fixed at the top */
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+}
+
+.navbar li {
+    margin: 0; /* Remove float and margin to align items properly */
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px; /* Adjusted padding for better appearance */
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform transition */
+}
+
+.navbar a:hover {
+    background-color: hsl(0, 0%, 10%);
+    transform: scale(1.2);
+}
+
+.cine {
+    color: red;
+}
+
+.mood {
+    color: blue;
+}
+
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.navbar .right {
+    margin-left: auto;
+}
+
+.navbar .right a {
+    padding: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar li {
+        width: 100%;
+    }
+}
+
+.navbar a {
+    position: relative;
+}
+
+.navbar a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover::before {
+    background-color: white;
 }
 
 form {
@@ -21,6 +97,7 @@ form {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     width: 300px;
+    margin-top: 70px; /* Adjust margin to make space for the fixed navbar */
 }
 
 label {
